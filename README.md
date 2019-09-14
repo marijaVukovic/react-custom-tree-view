@@ -1,18 +1,14 @@
-# react-treebeard
+# react-custom-tree-view
 
-[![Build Status](https://travis-ci.org/storybookjs/react-treebeard.svg?branch=master)](https://travis-ci.org/storybookjs/react-treebeard) [![Coverage Status](https://coveralls.io/repos/storybookjs/react-treebeard/badge.svg?branch=master&service=github)](https://coveralls.io/github/storybookjs/react-treebeard?branch=master)
+This project was forked from https://github.com/storybookjs/react-treebeard
 
 React Tree View Component. Data-Driven, Fast, Efficient and Customisable.
 
 ### Install
 
 ```
-npm install react-treebeard --save
+npm install react-custom-tree-view --save
 ```
-
-### [Example](http://storybookjs.github.io/react-treebeard/)
-
-An online example from the `/example` directory can be found here: [Here](http://storybookjs.github.io/react-treebeard/)
 
 ### Quick Start
 ```javascript
@@ -198,6 +194,9 @@ The component key. If not defined, an auto-generated index is used.
 
 #### name
 The name prop passed into the Header component.
+
+#### nodeComponent
+Custom component used to render tree node.
 
 #### children
 The children attached to the node. This value populates the subtree at the specific node. Each child is built from the same basic data structure. Tip: Make this an empty array, if you want to asynchronously load a potential parent.
