@@ -134,6 +134,9 @@ Sets the treeview animations. Set to `false` if you want to turn off animations.
 #### decorators
 `PropTypes.object`
 
+#### nodeComponent
+`PropTypes.elementType`
+
 Decorates the treeview. Here you can use your own Container, Header, Toggle and Loading components. Defaults to `src/decorators`. See example below:
 
 ```javascript
