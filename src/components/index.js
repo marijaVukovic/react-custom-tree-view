@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {castArray} from 'lodash';
+import { castArray } from 'lodash';
 
 import defaultTheme from '../themes/default';
 import defaultAnimations from '../themes/animations';
-import {randomString} from '../util';
-import {Ul} from './common';
+import { randomString } from '../util';
+import { Ul } from './common';
 import defaultDecorators from './Decorators';
 import TreeNode from './TreeNode';
 
-const TreeBeard = ({animations, decorators, data, onToggle, style}) => (
-    <Ul style={{...defaultTheme.tree.base, ...style.tree.base}}>
+const TreeBeard = ({ animations, decorators, data, onToggle, style, nodeComponent: NodeComponent = TreeNode }) => (
+    <Ul style={{ ...defaultTheme.tree.base, ...style.tree.base }}>
         {castArray(data).map(node => (
-            <TreeNode
-                {...{decorators, node, onToggle, animations}}
+            <NodeComponent
+                {...{ decorators, node, onToggle, animations }}
                 key={node.id || randomString()}
-                style={{...defaultTheme.tree.node, ...style.tree.node}}
+                style={{ ...defaultTheme.tree.node, ...style.tree.node }}
             />
         ))}
     </Ul>
@@ -32,7 +32,8 @@ TreeBeard.propTypes = {
         PropTypes.bool
     ]),
     onToggle: PropTypes.func,
-    decorators: PropTypes.object
+    decorators: PropTypes.object,
+    nodeComponent: PropTypes.elementType,
 };
 
 TreeBeard.defaultProps = {
